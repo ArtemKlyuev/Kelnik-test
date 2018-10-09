@@ -1,4 +1,4 @@
-## https://artemklyuev.github.io/kelnik-test
+## https://artemklyuev.github.io/Kelnik-test
 
 npr run dev или yarn run dev для запуска в режиме разработки
 
