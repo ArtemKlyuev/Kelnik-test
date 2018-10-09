@@ -1,0 +1,5 @@
+nav.nav
+	+b.UL.menu
+		each link, title in nav.navPages
+			+e.item
+				+e.A(href= link).link= title

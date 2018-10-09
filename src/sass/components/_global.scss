@@ -1,0 +1,29 @@
+html {
+	font-family: 'Open Sans', sans-serif;
+
+	@include to(1580px) {
+		font-size: 13px;
+	}
+
+	@include lg(font-size, 10.9px);
+
+	@include md(font-size, 12px);
+}
+
+body {
+	background-color: $bg-color;
+	overflow-x: hidden;
+}
+
+.container {
+	@include wrapper();
+	@include md(margin-top, 162px);
+}
+
+.row {
+	@include row-flex();
+}
+
+.col {
+	@include col();
+}

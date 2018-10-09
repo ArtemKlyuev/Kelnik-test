@@ -1,0 +1,10 @@
++b.FOOTER.footer
+    +e.text #[+e.SPAN.text-first-line Успей купить!]#[br]Подпишись и успей словить все акции
+    +b.FORM.form-subscribe
+        +e.group
+            +e.INPUT(type='email' placeholder='E-mail' required).email
+            +e.BUTTON(type='submit').btn-send Подписаться
+            +e.SPAN.email-error
+        +e.INPUT#checkbox(type='checkbox' name='checkbox' checked).checkbox
+        +e.LABEL(for='checkbox').checkbox-label подписаться на новости
+        +e.SPAN.checkbox-error

@@ -1,0 +1,225 @@
+.apartment-card {
+
+    position: relative;
+    border-bottom: none;
+    border-radius: 3px;
+
+    &.col {
+        @include size(4);
+        @include size-lg(6);
+        @include size-sm(10);
+        @include size-xs(12);
+        @include sm(justify-content, center);
+        margin-bottom: 54px;
+    }
+
+    &_free {
+        border: 1px solid $main-green-color;
+
+        &:hover {
+            border-color: $main-green-color-hover;
+        }
+    }
+
+    &_reserved {
+        border: 1px solid $reserved-color;
+
+        &:hover {
+            border-color: $reserved-color-hover;
+        }
+    }
+
+    &_sold {
+        border: 1px solid $sold-color;
+    }
+
+    &__header {
+        display: flex;
+        box-sizing: border-box;
+        max-height: 36px;
+        margin-bottom: 14px;
+        padding-top: 18px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    &__badge {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        padding: 3px;
+        border-radius: 3px;
+        background-color: $discount-badge-color;
+        color: $white-font-color;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    &__star {
+        @include sprite($empty-star);
+        display: flex;
+        margin-left: auto;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &_favorite {
+            @include sprite($filled-star);
+        }
+    }
+
+    &__img-wrapper {
+        height: 209px;
+        margin-bottom: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        position: absolute;
+        top: 287px;
+        left: 18%;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: $main-green-color;
+        @include lg(left, 26%);
+
+        @include to(1050px) {
+            left: 21%;
+        }
+
+        @include to(820px) {
+            left: 16%;
+        }
+
+        @include sm(left, 26%);
+
+        @include to(620px) {
+            left: 15%;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        top: 362px;
+        left: 18%;
+        @include lg(left, 26%);
+
+        @include to(1050px) {
+            left: 21%;
+        }
+
+        @include to(820px) {
+            left: 16%;
+        }
+
+        @include sm(left, 26%);
+
+        @include to(620px) {
+            left: 15%;
+        }
+    }
+
+    &__text-finish {
+        display: inline-block;
+        margin-right: 21px;
+        padding-left: 7px;
+        border-left: 3px solid $main-blue-color;
+        border-radius: 2px;
+        font-size: 16px;
+        color: $main-blue-color;
+    }
+
+    &__text-square {
+        display: inline-block;
+        margin-right: 14px;
+        font-size: 13px;
+        color: $apartments-info-text;
+
+        &::first-line {
+            font-size: 18px;
+        }
+    }
+
+    &__text-floor {
+        display: inline-block;
+        font-size: 13px;
+        color: $apartments-info-text;
+    }
+
+    // Костыль ( в хроме через ::first-line разбивает на несколько строк)
+    &__text-first-line {
+        font-size: 16px;
+    }
+
+    &__price {
+        position: absolute;
+        top: 437px;
+        left: 18%;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: $apartments-info-text;
+        @include lg(left, 26%);
+
+        @include to(1050px) {
+            left: 21%;
+        }
+
+        @include to(820px) {
+            left: 16%;
+        }
+
+        @include sm(left, 26%);
+
+        @include to(620px) {
+            left: 15%;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 12px;
+        letter-spacing: 0.72px;
+        text-transform: uppercase;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: $white-font-color;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &_free {
+            background-color: $main-green-color;
+
+            &:hover {
+                background-color: $main-green-color-hover;
+            }
+
+            &:active {
+                background-color: $main-green-color-active;
+            }
+        }
+
+        &_reserved {
+            background-color: $reserved-color;
+
+            &:hover {
+                background-color: $reserved-color-hover;
+            }
+
+            &:active {
+                background-color: $reserved-color-active;
+            }
+        }
+
+        &_sold {
+            background-color: $sold-color;
+            cursor: default;
+        }
+    }
+}

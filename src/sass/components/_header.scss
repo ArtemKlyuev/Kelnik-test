@@ -1,0 +1,140 @@
+.header {
+    height: 126px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 61px;
+    background-color: $main-green-color;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include md-block() {
+        position: fixed;
+        z-index: 1;
+        display: block;
+        height: 110px;
+        width: 100%;
+        top: 0;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+}
+
+.logo {
+    flex: 2;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    @include to(1280px) {
+        flex: 1;
+    }
+
+    @include md(margin-bottom, 25px);
+
+    &__link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include md(display, block);
+    }
+}
+
+@import 'components/_menu';
+
+.contacts {
+    display: flex;
+    flex: 3;
+
+    @include to(1366px) {
+        flex: 2;
+    }
+
+    flex-direction: column;
+    justify-content: center;
+    //margin-left: auto;
+    color: $white-font-color;
+
+    &__phone {
+        margin-bottom: 4px;
+        font-size: rem(32);
+        color: $white-font-color;
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover {
+            color: $white-font-color-hover;
+        }
+
+        &:active {
+            color: $link-active-color;
+        }
+    }
+
+    &__text {
+        display: block;
+        //margin: 0;
+        font-size: rem(20);
+    }
+}
+
+.menu-burger {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 45px;
+    height: 55px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    @include md(display, block);
+
+    &:hover {
+        .menu-burger__line {
+            background-color: $white-font-color-hover;
+        }
+    }
+
+    &:active {
+        .menu-burger__line {
+            background-color: $link-active-color;
+        }
+    }
+
+    &__line {
+        height: 5px;
+        background-color: $white-font-color;
+        margin: 10px;
+        display: block;
+        width: 45px;
+    }
+}
+
+.js-menu-open {
+    animation: increaseHeight 0.5s ease forwards;
+}
+
+.js-menu-closed {
+    animation: decreaseHeight 0.5s ease forwards;
+}
+
+@keyframes increaseHeight {
+    from {
+        height: 110px;
+    }
+
+    to {
+        height: 460px;
+    }
+}
+
+@keyframes decreaseHeight {
+    from {
+        height: 460px;
+    }
+
+    to {
+        height: 110px;
+    }
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// utilities
+@import '../../node_modules/normalize.css/normalize';
+@import 'utilities/_smart-grid';
+@import 'utilities/_variables';
+@import 'utilities/_mixins';
+@import 'utilities/_png-sprite';
+
+// global styles
+@import 'components/_global';
+
+//components
+@import 'components/_header';
+@import 'components/_main_content';
+@import 'components/_footer';
+@import 'components/_scroll-up-btn';

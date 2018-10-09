@@ -1,0 +1,198 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    height: 197px;
+    margin-bottom: 100px;
+    padding-top: 54px;
+    padding-left: 52px;
+    padding-right: 105px;
+    border-radius: 3px;
+    background-color: $main-blue-color;
+    box-sizing: border-box;
+
+    @include to(820px) {
+        padding-right: 35px;
+    }
+
+    @include to(460px) {
+        height: auto;
+        padding-bottom: 15px;
+    }
+
+    @include sm-block() {
+        display: block;
+        margin-bottom: 23px;
+        padding-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        color: $white-font-color;
+        font-weight: 400;
+        flex: 10;
+
+        @include sm-block() {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @include to(460px) {
+            font-size: 15px;
+        }
+    }
+
+    &__text-first-line {
+        margin-bottom: 11px;
+        font-size: 34px;
+        font-weight: 600;
+
+        @include to(460px) {
+            font-size: 30px;
+        }
+    }
+}
+
+.form-subscribe {
+    flex: 11;
+
+    @include sm-block() {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &__group {
+        display: flex;
+        position: relative;
+        margin-bottom: 22px;
+
+        @include to(460px) {
+            flex-direction: column;
+        }
+    }
+
+    &__email {
+        width: 62%;
+        height: 47px;
+        margin-right: 54px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        font-size: 18px;
+        color: $main-blue-color;
+
+        @include to(460px) {
+            width: 100%;
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+
+        &:invalid {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+        &::placeholder {
+            font-size: 18px;
+            color: $main-blue-color;
+        }
+
+        &:-ms-input-placeholder {
+            font-size: 18px;
+            color: $main-blue-color;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__email-error {
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        text-align: center;
+        color: $white-font-color;
+    }
+
+    &__btn-send {
+        width: 42%;
+        height: 47px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        background-color: $reserved-color;
+        font-size: 16px;
+        letter-spacing: 0.96px;
+        text-transform: uppercase;
+        color: $white-font-color;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        @include to(460px) {
+            width: 100%;
+        }
+
+        &:hover {
+            background-color: $reserved-color-hover;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            background-color: $reserved-color-active;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked+label:before {
+            content: "\2713";
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+            font-size: 15px;
+            font-weight: 600;
+            color: $main-blue-color;
+            text-align: center;
+            line-height: 17px;
+        }
+    }
+
+    &__checkbox-error {
+        display: none;
+        margin-top: 15px;
+        font-size: 14px;
+        color: $white-font-color;
+    }
+
+    &__checkbox-label {
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        color: $white-font-color;
+        font-size: 18px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+            background-color: $white-font-color;
+            border-radius: 2px;
+            box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+        }
+
+    }
+}

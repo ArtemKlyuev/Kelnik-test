@@ -1,0 +1,20 @@
+include ../../../node_modules/bemto.pug/bemto
+block variables
+
+doctype html
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		title #{title}
+		meta(name='viewport' content='width=device-width,initial-scale=1')
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700&amp;subset=cyrillic-ext' rel='stylesheet')
+		link(rel='stylesheet' href='css/main.css')
+		block link
+	body
+
+		block content
+
+		script(src='js/polyfill.min.js')
+		script(src='js/fetch.umd.js')
+		script(src='js/main.js')
+		block script

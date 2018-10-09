@@ -1,0 +1,137 @@
+.main {
+    margin-bottom: 71px;
+}
+
+.results {
+    &__find-text {
+        margin-bottom: 61px;
+        padding-left: 107px;
+        font-size: 48px;
+        font-weight: 700;
+        color: $main-green-color;
+
+        @include sm-block() {
+            padding-left: 15%;
+            font-size: 40px;
+        }
+
+        @include to(620px) {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        @include to(500px) {
+            font-size: 32px;
+        }
+    }
+
+    &__container {
+        padding: 30px 107px 74px 107px;
+        background-color: $white-font-color;
+        box-sizing: border-box;
+
+        @include to(620px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @include xs-block() {
+            padding-left: 4%;
+            padding-right: 4%;
+        }
+    }
+
+    &__sorting-text {
+        display: inline-block;
+        margin-bottom: 46px;
+        font-size: 14px;
+        color: $main-green-color-opacity-07;
+
+        @include to(390px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__switcher {
+        margin-right: 45px;
+        cursor: pointer;
+        font-size: 14px;
+        color: $main-green-color-opacity-07;
+
+        @include to(390px) {
+            display: block;
+            max-width: 24%;
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            color: $main-green-color-opacity-07-hover;
+        }
+
+        &::after {
+            content: '\203A';
+            display: inline-block;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+            margin-left: 10px;
+            line-height: 13px;
+            border-radius: 50%;
+            transform: rotate(-90deg);
+            overflow: hidden;
+            color: $main-blue-color-opacity-08;
+            background-color: $main-blue-color-opacity-004;
+        }
+
+        &_descending {
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__cards {
+        margin-bottom: 54px;
+        @include sm(justify-content, center);
+    }
+
+    &__error {
+        display: none;
+        text-align: center;
+        color: $red;
+        margin-bottom: 20px;
+    }
+
+    &__btn-show {
+        display: block;
+        margin: 0 auto;
+        padding: 30px 18%;
+        font-size: 14px;
+        letter-spacing: 1.12px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: $main-blue-color;
+        border-radius: 3px;
+        color: $white-font-color;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $main-blue-color-hover;
+        }
+
+        &:active {
+            background-color: $main-blue-color-active;
+        }
+    }
+}
+
+@import '_apartment_cards';
+
+.js-selected {
+    padding-bottom: 3px;
+    border-bottom: 1px dotted;
+}
