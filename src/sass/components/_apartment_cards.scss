@@ -83,19 +83,16 @@
     }
 
     &__title {
-        //position: absolute;
-        /* top: 287px;
-        left: 18%; */
         height: 60px;
         margin: 0;
         margin-bottom: 25px;
-        padding-left: calc(100% - 274px); //16%;
+        padding-left: calc(100% - 274px);
         padding-right: 8%;
         font-size: 24px;
         font-weight: 700;
         line-height: 30px;
         color: $main-green-color;
-        //@include lg(left, 26%);
+
         @include lg(padding-left, calc(100% - 313px));
         @include md(padding-left, calc(100% - 260px));
         @include md(padding-right, 3%);
@@ -121,7 +118,6 @@
     }
 
     &__info {
-        //position: absolute;
         padding-left: 16%;
         padding-right: 9%;
         margin-bottom: 40px;
@@ -147,34 +143,7 @@
         @include to(400px) {
             padding-right: 5%;
             padding-left: 11%;
-            //font-size: 18px;
         }
-
-        /* @include lg(left, 26%);
-
-        @include to(1355px) {
-            padding-left: 13%;
-            padding-right: 8%;
-        }
-
-        @include lg-block() {
-            padding-left: 25%;
-        }
-
-        @include to(1100px) {
-            //left: 21%;
-            padding-left: 22%;
-        }
-
-        @include to(820px) {
-            left: 16%;
-        }
-
-        @include sm(left, 26%);
-
-        @include to(620px) {
-            left: 15%;
-        } */
     }
 
     &__text-finish {
@@ -218,8 +187,6 @@
     }
 
     &__price {
-        //position: absolute;
-
         margin-bottom: 24px;
         padding-left: 16%;
         padding-right: 9%;
@@ -251,32 +218,6 @@
             padding-left: 11%;
             font-size: 18px;
         }
-
-        /* @include lg(left, 26%);
-
-        @include lg-block() {
-            padding-left: 25%;
-        }
-
-        @include to(1355px) {
-            padding-left: 13%;
-            padding-right: 8%;
-        }
-
-        @include to(1100px) {
-            //left: 21%;
-            padding-left: 22%;
-        }
-
-        @include to(820px) {
-            left: 16%;
-        }
-
-        @include sm(left, 26%);
-
-        @include to(620px) {
-            left: 15%;
-        } */
     }
 
     &__btn {
