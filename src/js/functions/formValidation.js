@@ -4,7 +4,7 @@ export default function formValidation() {
 
     const checkValid = function (e) {
 
-        const checkBoxChecked = document.querySelector('.form-subscribe__checkbox').checked; //.getAttribute('checked');
+        const checkBoxChecked = document.querySelector('.form-subscribe__checkbox').checked;
         const checkBoxError = document.querySelector('.form-subscribe__checkbox-error');
         const emailInput = document.querySelector('.form-subscribe__email').value;
         const emailPattern = /^[a-z][a-z0-9]+@[a-z]+\.[a-z]+$/i;
