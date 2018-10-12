@@ -14,7 +14,9 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.23.6",
+    "browserify": "^16.2.3",
     "bs-html-injector": "^3.0.3",
     "cross-env": "^5.2.0",
     "del": "^3.0.0",
@@ -38,9 +40,13 @@
     "gulp-tinypng-compress": "^1.2.1",
     "gulp-uglify": "^3.0.0",
     "gulp.spritesmith": "^6.9.0",
-    "stream-combiner2": "^1.1.1"
+    "stream-combiner2": "^1.1.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
     "bemto.pug": "^2.1.0",
     "normalize.css": "^8.0.0",
     "promise-polyfill": "^8.1.0",
