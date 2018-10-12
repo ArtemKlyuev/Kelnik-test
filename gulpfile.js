@@ -17,11 +17,12 @@ lazyRequireTask('sass', './gulp/tasks/sass');
 lazyRequireTask('pug', './gulp/tasks/pug');
 lazyRequireTask('fetching-data', './gulp/tasks/fetching-data');
 lazyRequireTask('scripts', './gulp/tasks/scripts');
+lazyRequireTask('polyfills', './gulp/tasks/polyfills')
 lazyRequireTask('img', './gulp/tasks/img');
 lazyRequireTask('png-sprites', './gulp/tasks/png-sprites');
 lazyRequireTask('serve', './gulp/tasks/serve');
 lazyRequireTask('watch', './gulp/tasks/watch');
 lazyRequireTask('smart-grid', './gulp/tasks/smart-grid');
 
-gulp.task('dev', gulp.series('del', 'smart-grid', 'png-sprites', gulp.parallel('pug', 'sass', 'img', 'scripts', 'fetching-data'), gulp.parallel('watch', 'serve')));
-gulp.task('build', gulp.series('del', 'smart-grid', 'png-sprites', gulp.parallel('scripts', 'img', 'sass', 'fetching-data'), 'pug'));
+gulp.task('dev', gulp.series('del', 'smart-grid', 'png-sprites', gulp.parallel('pug', 'sass', 'img', 'scripts', 'fetching-data', 'polyfills'), gulp.parallel('watch', 'serve')));
+gulp.task('build', gulp.series('del', 'smart-grid', 'png-sprites', gulp.parallel('scripts', 'img', 'sass', 'fetching-data', 'polyfills'), 'pug'));
