@@ -62,7 +62,6 @@ export default function sortingCards() {
 
         sortState.rooms.toggle(roomCounter);
         sortState.price.disable();
-        console.log(sortState);
 
         itemsArr.sort((a, b) => {
             if (roomCounter % 2) {
@@ -95,10 +94,9 @@ export default function sortingCards() {
                 itemsArr.push(cards[price]);
             }
         }
-        //console.log(priceCounter);
+
         sortState.price.toggle(priceCounter);
         sortState.rooms.disable();
-        console.log(sortState);
 
         itemsArr.sort((a, b) => {
 
