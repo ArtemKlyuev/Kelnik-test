@@ -70,46 +70,100 @@
 
     &__img-wrapper {
         height: 209px;
-        margin-bottom: 220px;
+        margin-bottom: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
+    &__img {
+        @include to(300px) {
+            width: 100%;
+        }
+    }
+
     &__title {
-        position: absolute;
-        top: 287px;
-        left: 18%;
+        //position: absolute;
+        /* top: 287px;
+        left: 18%; */
+        height: 60px;
         margin: 0;
+        margin-bottom: 25px;
+        padding-left: calc(100% - 274px); //16%;
+        padding-right: 8%;
         font-size: 24px;
         font-weight: 700;
         line-height: 30px;
         color: $main-green-color;
-        @include lg(left, 26%);
+        //@include lg(left, 26%);
+        @include lg(padding-left, calc(100% - 313px));
+        @include md(padding-left, calc(100% - 260px));
+        @include md(padding-right, 3%);
 
-        @include to(1050px) {
-            left: 21%;
+        @include to(840px) {
+            padding-left: calc(100% - 230px);
         }
 
-        @include to(820px) {
-            left: 16%;
+        @include sm-block() {
+            padding-left: calc(100% - 292px);
         }
 
-        @include sm(left, 26%);
+        @include xs-block() {
+            padding-left: calc(100% - 315px);
+            padding-right: 5%;
+        }
 
-        @include to(620px) {
-            left: 15%;
+        @include to(400px) {
+            padding-right: 5%;
+            padding-left: 11%;
+            font-size: 18px;
         }
     }
 
     &__info {
-        position: absolute;
+        //position: absolute;
+        padding-left: 16%;
+        padding-right: 9%;
+        margin-bottom: 40px;
         top: 362px;
         left: 18%;
-        @include lg(left, 26%);
+        @include lg(padding-left, calc(100% - 313px));
+        @include md(padding-left, calc(100% - 260px));
+        @include md(padding-right, 3%);
 
-        @include to(1050px) {
-            left: 21%;
+        @include to(840px) {
+            padding-left: calc(100% - 230px);
+        }
+
+        @include sm-block() {
+            padding-left: calc(100% - 292px);
+        }
+
+        @include xs-block() {
+            padding-left: calc(100% - 315px);
+            padding-right: 5%;
+        }
+
+        @include to(400px) {
+            padding-right: 5%;
+            padding-left: 11%;
+            //font-size: 18px;
+        }
+
+        /* @include lg(left, 26%);
+
+        @include to(1355px) {
+            padding-left: 13%;
+            padding-right: 8%;
+        }
+
+        @include lg-block() {
+            padding-left: 25%;
+        }
+
+        @include to(1100px) {
+            //left: 21%;
+            padding-left: 22%;
         }
 
         @include to(820px) {
@@ -120,7 +174,7 @@
 
         @include to(620px) {
             left: 15%;
-        }
+        } */
     }
 
     &__text-finish {
@@ -131,16 +185,24 @@
         border-radius: 2px;
         font-size: 16px;
         color: $main-blue-color;
+
+        @include to(400px) {
+            margin-right: 12px;
+        }
     }
 
     &__text-square {
         display: inline-block;
-        margin-right: 14px;
+        margin-right: 13px;
         font-size: 13px;
         color: $apartments-info-text;
 
         &::first-line {
             font-size: 18px;
+        }
+
+        @include to(400px) {
+            margin-right: 10px;
         }
     }
 
@@ -156,17 +218,54 @@
     }
 
     &__price {
-        position: absolute;
+        //position: absolute;
+
+        margin-bottom: 24px;
+        padding-left: 16%;
+        padding-right: 9%;
         top: 437px;
         left: 18%;
-        margin: 0;
+
         font-size: 24px;
         font-weight: 600;
         color: $apartments-info-text;
-        @include lg(left, 26%);
+        @include lg(padding-left, calc(100% - 313px));
+        @include md(padding-left, calc(100% - 260px));
+        @include md(padding-right, 3%);
 
-        @include to(1050px) {
-            left: 21%;
+        @include to(840px) {
+            padding-left: calc(100% - 230px);
+        }
+
+        @include sm-block() {
+            padding-left: calc(100% - 292px);
+        }
+
+        @include xs-block() {
+            padding-left: calc(100% - 315px);
+            padding-right: 5%;
+        }
+
+        @include to(400px) {
+            padding-right: 5%;
+            padding-left: 11%;
+            font-size: 18px;
+        }
+
+        /* @include lg(left, 26%);
+
+        @include lg-block() {
+            padding-left: 25%;
+        }
+
+        @include to(1355px) {
+            padding-left: 13%;
+            padding-right: 8%;
+        }
+
+        @include to(1100px) {
+            //left: 21%;
+            padding-left: 22%;
         }
 
         @include to(820px) {
@@ -177,7 +276,7 @@
 
         @include to(620px) {
             left: 15%;
-        }
+        } */
     }
 
     &__btn {
