@@ -1,4 +1,7 @@
-
+.vscode
+jsconfig.json
 manifest
 node_modules
 .tinypng-sigs
+_smart-grid.scss
+_png-sprite.scss
