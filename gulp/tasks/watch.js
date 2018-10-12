@@ -8,6 +8,7 @@ module.exports = function (options) {
 		gulp.watch('src/sass/**/*.{sass,scss}', gulp.series('sass'));
 		gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
 		gulp.watch('src/js/**/*.js', gulp.series('scripts'));
+		gulp.watch('src/data/data.json', gulp.series('fetching-data'));
 	};
 
 };
