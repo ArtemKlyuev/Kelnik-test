@@ -1,5 +1,4 @@
 import Data from './Data';
-import addToFav from '../functions/addToFav';
 import {
     sortState
 } from '../functions/sort';
@@ -79,9 +78,7 @@ Card.prototype._buildCard = function (cardData) {
     } else if (badges.length > 1) {
         const headerBadges = badges.reduce((acc, el) => acc += `<span class="apartment-card__badge">${el}</span>`, ``);
         cardHeader.innerHTML = headerBadges + `${cardStar}`;
-        //console.log(headerBadges);
     } else if (badges) {
-        //console.log(badges.length);
         cardHeader.innerHTML = `<span class="apartment-card__badge">${badges[0]}</span>` + `${cardStar}`;
     }
 
@@ -163,57 +160,47 @@ Card.prototype._buildCard = function (cardData) {
 };
 
 Card.prototype.showMore = function () {
-    //console.log(this._response);
     const btnShow = document.querySelector('.results__btn-show');
     let isEndOfResults = false;
     let remainingCards = [];
-    console.log('вне замыкания');
 
+    function checkEnd() {
+        if (remainingCards.length === 0) {
+            isEndOfResults = true;
+            btnShow.classList.remove('js-visible');
+            return;
+        }
+    };
     return function () {
-        console.log('внутри замыкания');
-        if (isEndOfResults) {
 
-            console.log(isEndOfResults);
+        if (isEndOfResults) {
             return;
         }
 
-        console.log('Начало: тестируем вначале ретурна функции');
-        console.log(remainingCards);
-        console.log('Конец: тестируем вначале ретурна функции');
-
         if (remainingCards.length > 0) {
-            remainingCards.forEach((el, indx, arr) => {
+            const newArr = remainingCards.filter((el, indx) => {
                 if (indx + 1 > 20) {
-                    remainingCards.length = 0;
-                    //remainingCards = [...arr.slice(indx)];
-                    remainingCards.push(el);
+                    return el;
                 } else {
                     this._buildCard(el);
-                    //remainingCards.length = 0;
-                    isEndOfResults = true;
-                    btnShow.classList.remove('js-visible');
-                    console.log('Конец');
+                    return;
                 }
+            });
 
-            });
+            remainingCards = [...newArr];
+            btnShow.textContent = `Показать ещё ${remainingCards.length > 20 ? 20 : remainingCards.length}`;
+            checkEnd();
+
         } else {
-            this._response.forEach((el, indx, arr) => {
+            this._response.forEach((el, indx) => {
                 if (indx + 1 > 20) {
-                    //remainingCards = [...arr.slice(indx)];
                     remainingCards.push(el);
                 } else {
                     this._buildCard(el);
                 }
             });
-            if (remainingCards.length === 0) {
-                isEndOfResults = true;
-                btnShow.classList.remove('js-visible');
-                return;
-            }
-            btnShow.textContent = `Показать ещё ${remainingCards.length}`;
-            console.log('Начало: тестируем внутри фетча');
-            console.log(remainingCards);
-            console.log('Конец: тестируем внутри фетча');
+            checkEnd();
+            btnShow.textContent = `Показать ещё ${remainingCards.length > 20 ? 20 : remainingCards.length}`;
         }
     };
 };
