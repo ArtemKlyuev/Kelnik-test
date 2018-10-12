@@ -5,5 +5,5 @@ export default function addToFav() {
         this.classList.toggle('apartment-card__star_favorite');
     }
 
-    stars.forEach(el => el.addEventListener('click', addToFave));
+    stars.forEach(el => el.onclick = addToFave);
 };
