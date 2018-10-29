@@ -4,7 +4,7 @@ npr run dev или yarn run dev для запуска в режиме разра
 
 npr run prod или yarn run prod для сборки
 
-## ТЗ к макету для тестового задания
+## ТЗ к [макету](https://github.com/ArtemKlyuev/Kelnik-test/blob/fetch/test.jpg) для тестового задания
 
 ### Верстка
 1. HTML5
